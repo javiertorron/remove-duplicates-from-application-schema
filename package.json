@@ -1,0 +1,51 @@
+{
+  "name": "knack-json-duplicate-remover",
+  "version": "1.0.0",
+  "description": "Takes a JSON file from storage, removes duplicate kays and outputs a new file to storage",
+  "main": "index.js",
+  "scripts": {
+    "execute": "node ./dist/index.js",
+    "start": "npm run build && npm run execute",
+    "test": "jest --verbose",
+    "lint": "eslint ./src/*.ts --fix",
+    "format": "prettier --write ./src/*.ts",
+    "build": "npm run format && npm run lint && tsc"
+  },
+  "author": "Javier Torron <javier.torron.diaz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.3.0",
+    "@typescript-eslint/parser": "^5.59.9"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "eslint": "^8.42.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".test.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
